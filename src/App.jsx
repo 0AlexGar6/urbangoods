@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import products from "./data/products";
 import ProductCard from "./components/ProductCard";
 import ProductModal from "./components/ProductModal";
+import logoImg from "./assets/logo.png";
+import portadaImg from "./assets/portada-bg.jpg";
 import { motion } from "framer-motion";
 import {
   FaWhatsapp,
@@ -35,9 +37,9 @@ const App = () => {
       <section className="relative min-h-screen">
         {/* Fondo con imagen - versión mejorada */}
         <div
-          className="absolute inset-0 bg-cover bg-center bg-fixed" // bg-fixed para efecto parallax
+          className="absolute inset-0 bg-cover bg-center bg-fixed"
           style={{
-            backgroundImage: "url('/src/assets/portada-bg.jpg')",
+            backgroundImage: `url(${portadaImg})`,
             filter: "brightness(0.8)",
           }}
         ></div>
@@ -48,7 +50,7 @@ const App = () => {
         {/* Contenido centrado mejorado */}
         <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
           <motion.img
-            src="/src/assets/logo.png"
+            src={logoImg}
             alt="Logo tienda"
             className="w-[250px] h-[250px] md:w-[300px] md:h-[300px] object-cover mb-6 rounded-full border-4 border-white/30 shadow-xl"
             initial={{ scale: 0.9, opacity: 0 }}
